@@ -1,0 +1,23 @@
+<div class="modal-header">
+    <h2>{{portfolio.name}}</h2>
+    <button class="btn-close" (click)="bsModalRef.hide()"></button>
+</div>
+<div class="model-body">
+    <carousel>
+        <div *ngFor="let picture of portfolio.pictures">
+            <slide><img src={{picture}} alt="project" style="display: block; width: 100%;"></slide>
+
+        </div>
+    </carousel>
+    <h3 class="mt-2">Description</h3>
+    <p>{{portfolio.description}}</p>
+    <p>Please find this Project on Github <a href={{portfolio.portfolioLink}} target="_blank">here</a></p>
+
+    <hr>
+    <div class="d-flex flex-wrap">
+        <div *ngFor="let tag of portfolio.tags">
+            <div class="tag me-2 mb-1" [style.background-color]="tag.color">{{tag}}</div>
+        </div>
+    </div>
+
+</div>
