@@ -10,7 +10,11 @@
                         <small><b>Languages:</b></small>
                         <div class="form-group">
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input position-static me-2">
+                                <input type="checkbox" 
+                                class="form-check-input position-static me-2"
+                                [(ngModel)]="typescript"
+                                (change)="Filter()"
+                                name="TypeSript">
                                 <label class="form-check-label small">TypeSript</label>
                             </div>
                         </div>

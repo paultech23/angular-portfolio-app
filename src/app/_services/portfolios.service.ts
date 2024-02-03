@@ -34,4 +34,25 @@ export class PortfoliosService {
 
     return portfolio;
   }
+
+  GetPortfoliosByFilter(filterTags: Tag[]) {
+    let filteredPortfolios: Portfolio[] = [];
+    this.portfolios.forEach(function(portfolio) {
+      let foundAll = true;
+
+      filterTags.forEach(function (filterTag) {
+        if (portfolio.tags.includes(filterTag) == false) {
+          foundAll = false;
+        }
+      });
+      
+      if (foundAll) {
+        filteredPortfolios.push(portfolio);
+      }
+    });
+
+    return filteredPortfolios;
+
+  }
+
 }
