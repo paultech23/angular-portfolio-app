@@ -65,4 +65,18 @@ export class PortfolioComponent implements OnInit{
     this.portfolios = this.portfolioService.GetPortfoliosByFilter(filterTags);
   }
 
+  ResetFilters() {
+    this.angular = false;
+    this.python = false;
+    this.csharp = false;
+    this.javascript = false;
+    this.css = false;
+    this.html = false;
+    this.nodejs = false;
+    this.mysql = false;
+    this.typescript = false;
+
+    this.portfolios = this.portfolioService.GetPortfolios();
+  }
+
 }
