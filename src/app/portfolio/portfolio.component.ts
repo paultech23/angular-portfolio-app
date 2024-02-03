@@ -23,6 +23,7 @@ export class PortfolioComponent implements OnInit{
   html: boolean = false;
   javascript: boolean = false;
   mysql: boolean = false;
+  filtering:boolean = false
 
   constructor(private titleService: Title, private portfolioService: PortfoliosService) {
     this.titleService.setTitle('Paulin Yonga - Portfolio');
@@ -62,6 +63,13 @@ export class PortfolioComponent implements OnInit{
       filterTags.push(Tag.MYSQL);
     }
 
+    if (this.python || this.angular || this.typescript || this.csharp || this.css || this.html || this.nodejs || this.javascript || this.mysql ) {
+      this.filtering = true;
+    }
+    else {
+      this.filtering = false;
+    }
+
     this.portfolios = this.portfolioService.GetPortfoliosByFilter(filterTags);
   }
 
@@ -75,6 +83,7 @@ export class PortfolioComponent implements OnInit{
     this.nodejs = false;
     this.mysql = false;
     this.typescript = false;
+    this.filtering = false;
 
     this.portfolios = this.portfolioService.GetPortfolios();
   }
