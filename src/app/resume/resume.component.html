@@ -1,18 +1,149 @@
 <div class="container text-center">
     <button (click)="DownloadFile()" class="btn btn-primary mb-5 shadow border">Download PDF Resume</button>
 
-    <accordion>
-        <accordion-group heading="Work Experience">
+    <div class="pb-2">
+        <accordion [isAnimated]="true" class="shadow">
+            <accordion-group [(isOpen)]="isWorkExperienceOpen" >
+                <button class="btn btn-block justify-content-between d-flex w-100" accordion-heading>
+                    <div style="visibility: hidden;"></div>
+                    <div class="btn-link">Work Experience</div>
 
-        </accordion-group>
-        <accordion-group heading="Education">
+                    <div style="width: 11px;">
+                        <div *ngIf="!isWorkExperienceOpen" style="color: white;">></div>
+                        <div *ngIf="isWorkExperienceOpen" style="color: white;">v</div></div>
+                   
+                </button>
+                <div style="text-align: left;">
+                    <h2 class="mb-0">Sample Position 1</h2>
+                    <h3 class="text-primary">Sample Company 1</h3>
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor dolorem eos harum.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor dolorem eos harum.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor dolorem eos harum.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor dolorem eos harum.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor dolorem eos harum.</li>
+                    </ul>
+                </div>
+                <hr>
+                <div style="text-align: left;">
+                    <h2 class="mb-0">Sample Position 2</h2>
+                    <h3 class="text-primary">Sample Company 2</h3>
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor dolorem eos harum.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor dolorem eos harum.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor dolorem eos harum.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor dolorem eos harum.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor dolorem eos harum.</li>
+                    </ul>
+                </div>
+                <hr>
+                <div style="text-align: left;">
+                    <h2 class="mb-0">Sample Position 3</h2>
+                    <h3 class="text-primary">Sample Company 3</h3>
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor dolorem eos harum.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor dolorem eos harum.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor dolorem eos harum.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor dolorem eos harum.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor dolorem eos harum.</li>
+                    </ul>
+                </div>
+    
+            </accordion-group>
+            <accordion-group [(isOpen)]="isEducationOpen">
+                <button class="btn btn-block justify-content-between d-flex w-100" accordion-heading>
+                    <div style="visibility: hidden;"></div>
+                    <div class="btn-link">Education</div>
 
-        </accordion-group>
-        <accordion-group heading="Certifications">
+                    <div style="width: 11px;">
+                        <div *ngIf="!isEducationOpen" style="color: white;">></div>
+                        <div *ngIf="isEducationOpen" style="color: white;">v</div></div>
+                   
+                </button>
+                <div style="text-align: left;">
+                    <h2 class="mb-0">Sample Education 2</h2>
+                    <h3 class="text-primary">Sample Company 2</h3>
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor dolorem eos harum.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor dolorem eos harum.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor dolorem eos harum.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor dolorem eos harum.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor dolorem eos harum.</li>
+                    </ul>
+                </div>
+            </accordion-group>
+            <accordion-group [(isOpen)]="isCertificationOpen">
+                <button class="btn btn-block justify-content-between d-flex w-100" accordion-heading>
+                    <div style="visibility: hidden;"></div>
+                    <div class="btn-link">Certifications</div>
 
-        </accordion-group>
-        <accordion-group heading="Skills">
+                    <div style="width: 11px;">
+                        <div *ngIf="!isCertificationOpen" style="color: white;">></div>
+                        <div *ngIf="isCertificationOpen" style="color: white;">v</div></div>
+                   
+                </button>
+                <div style="text-align: left;">
+                    <h3 class="mb-0">Sample Certification </h3>
+                    <ul>
+                        <li>date</li>
+                        <li>reference.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor dolorem eos harum.</li>
+                    </ul>
+                    <h3 class="mb-0">Sample Certification </h3>
+                    <ul>
+                        <li>date</li>
+                        <li>reference.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor dolorem eos harum.</li>
+                    </ul>
+                    <h3 class="mb-0">Sample Certification </h3>
+                    <ul>
+                        <li>date</li>
+                        <li>reference.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor dolorem eos harum.</li>
+                    </ul>
+                </div>
+            </accordion-group>
+            <accordion-group [(isOpen)]="isSkillsOpen">
+                <button class="btn btn-block justify-content-between d-flex w-100" accordion-heading>
+                    <div style="visibility: hidden;"></div>
+                    <div class="btn-link">Skills</div>
 
-        </accordion-group>
-    </accordion>
+                    <div style="width: 11px;">
+                        <div *ngIf="!isSkillsOpen" style="color: white;">></div>
+                        <div *ngIf="isSkillsOpen" style="color: white;">v</div></div>
+                   
+                </button>
+                <div class="row" style="text-align: left;">
+                    <div class="col">
+                        <h3 class="text-primary">Programming languages:</h3>
+                        <ul>
+                            <li>Lorem ipsum dolor </li>
+                            <li>Lorem ipsum dolor </li>
+                            <li>Lorem ipsum dolor </li>
+                            <li>Lorem ipsum dolor </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3 class="text-primary">Frameworks:</h3>
+                        <ul>
+                            <li>Lorem ipsum dolor </li>
+                            <li>Lorem ipsum dolor </li>
+                            <li>Lorem ipsum dolor </li>
+                            <li>Lorem ipsum dolor </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3 class="text-primary">Techniques:</h3>
+                        <ul>
+                            <li>Lorem ipsum dolor </li>
+                            <li>Lorem ipsum dolor </li>
+                            <li>Lorem ipsum dolor </li>
+                            <li>Lorem ipsum dolor </li>
+                        </ul>
+                    </div>
+                </div>
+            </accordion-group>
+        </accordion>
+    </div>
+
 </div>
